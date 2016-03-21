@@ -58,9 +58,33 @@ var HTMLonlineURL = '<br><a href="#">%data%</a>';
 var internationalizeButton = '<button>Internationalize</button>';
 var googleMap = '<div id="map"></div>';
 
+var formattedName = HTMLheaderName.replace("%data%", "Vadym Vlasenko");
+var formattedRole = HTMLheaderRole.replace("%data%", "Lead Software developmant engineer in Test");
+var formattedContactInfo = HTMLemail.replace("%data%", "vadym.vlasenko@gmail.com");
+var formattedPictureUrl = HTMLbioPic.replace("%data%", "images/logo.jpg");
+var formattedWelcomeMessage = HTMLwelcomeMsg.replace("%data%", "Everything is awesome!");
+var formattedSkills = HTMLskills.replace("%data%", "leadership, critial thinking, team player");
+
+var bio = 
+    {
+        name : formattedName,
+        role : formattedRole,
+        contactInfo : formattedContactInfo,
+        pictureUrl : formattedPictureUrl,
+        welcomeMessage : formattedWelcomeMessage,
+        skills : formattedSkills
+    }
+
+$("#header").prepend(bio.role);
+$("#header").prepend(bio.name);
+$("#header").prepend(bio.contactInfo);
+$("#header").prepend(bio.pictureUrl);
+$("#header").prepend(bio.welcomeMessage);
+$("#header").prepend(bio.skills);
 
 /*
-The International Name challenge in Lesson 2 where you'll create a function that will need this helper code to run. Don't delete! It hooks up your code to the button you'll be appending.
+The International Name challenge in Lesson 2 where you'll create a function that will need this helper code to run. Don't delete! It hooks up your code to the button
+you'll be appending.
 */
 $(document).ready(function() {
   $('button').click(function() {
